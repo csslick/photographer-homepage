@@ -100,3 +100,12 @@ body {
   margin-left: 15px;
   color: #000;
 }
+
+
+/* 2단계 메뉴 hover 액션 */
+#gnb > ul .depth2 {
+  display: none;
+}
+#gnb > ul > li:hover .depth2 {
+  display: block;
+}
