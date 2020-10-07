@@ -24,12 +24,21 @@ body {
 
 /* gnb(메인메뉴) */
 #gnb {
-  width: 1000px;
+  /* nav 부모에 고정 높이값 추가 */
+  position: relative;
+  width: 1000px; 
+  height: 34px; /* 높이값 */
   margin: 0 auto;
   background: #000;
   margin-top: 10px;
 }
-#gnb > ul { overflow: hidden;}
+
+#gnb > ul {
+  /* nav 안에서 absolute로 배치하여 아래 콘텐츠 영역이 밀리지 않도록 레이어링 */
+  position: absolute;
+  width: 100%; 
+  height: 34px;
+}
 #gnb > ul > li {
   width: 20%;
   /* outline: 1px solid red; */
@@ -51,19 +60,38 @@ body {
 }
 #gnb > ul .active { color: #5695e1;}
 
+/* 2단계 메뉴 hover 액션 */
+#gnb > ul .depth2 {
+  display: none;
+}
+#gnb > ul > li:hover .depth2 {
+  display: block;
+}
+
+#gnb > ul > li .depth2 > li{
+  background: #000;
+  margin-top: 5px;
+}
+
+
 /* 메인 비주얼(콘텐츠) */
 #content {
-  width: 1000px; height: 500px;
+  width: 1000px; 
+  height: 500px;
   margin: 0 auto;
   background: #ccc;
   overflow: hidden;
 }
 #content .left {
+  width: 500px;
   float: left;
 }
 #content .right{
+  width: 500px;
   float: right;
 }
+
+#content img { display: block;}
 
 #main_footer {
   width: 1000px;
@@ -102,10 +130,3 @@ body {
 }
 
 
-/* 2단계 메뉴 hover 액션 */
-#gnb > ul .depth2 {
-  display: none;
-}
-#gnb > ul > li:hover .depth2 {
-  display: block;
-}
