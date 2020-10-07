@@ -29,7 +29,9 @@ body {
   background: #000;
   margin-top: 10px;
 }
-#gnb > ul { overflow: hidden;}
+#gnb > ul {
+  min-height: 36px;
+}
 #gnb > ul > li {
   width: 20%;
   /* outline: 1px solid red; */
@@ -53,17 +55,22 @@ body {
 
 /* 메인 비주얼(콘텐츠) */
 #content {
-  width: 1000px; height: 500px;
+  width: 1000px; 
+  height: 500px;
   margin: 0 auto;
   background: #ccc;
   overflow: hidden;
 }
 #content .left {
+  width: 500px;
   float: left;
 }
 #content .right{
+  width: 500px;
   float: right;
 }
+
+#content img { display: block;}
 
 #main_footer {
   width: 1000px;
@@ -108,4 +115,14 @@ body {
 }
 #gnb > ul > li:hover .depth2 {
   display: block;
+}
+
+#gnb > ul > li {
+  position: relative;
+}
+#gnb > ul > li .depth2 {
+  position: absolute;
+  left: 0; top: 40px;
+  width: 100%; 
+  background: #000;
 }
