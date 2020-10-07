@@ -7,23 +7,25 @@
 
 $(function(){
 
-  var top = 0;        // y축 위치
-  var duration = 500; // 재생시간
-  var interval_time = 5000;   // 슬라이드 인터벌 시간(5초 권장)
+  // el(요소명) | top(시작위치) | duration(재생시간) | interval_time(인터벌 시간)
+  function mySlider(el, top, duration, interval_time) {
+    $(el).css({marginTop: top}); 
 
-  setInterval(function(){
-    // 조건: -500(마지막) 위치 이면 0으로 돌아감
-    if(top <= -500) {
-      top = 0;  // 초기값
-    } else {
-      top = top - 500;  // 다음 이미지 위치
-    }
-   
-    $('#content > .left')
-      .animate({marginTop: top}, duration);
-  }, interval_time);
+    setInterval(function(){
+      // 조건: -500(마지막) 위치 이면 0으로 돌아감
+      if(top <= -500) {
+        top = 0;  // 초기값
+      } else {
+        top = top - 500;  // 다음 이미지 위치
+      }
+     
+      $(el)
+        .animate({marginTop: top}, duration);
+    }, interval_time);
+  
+  }
 
-
-
+  mySlider('.left.slider', 0, 500, 2000);
+  mySlider('.right.slider', -500, 500, 2000);
 
 })
