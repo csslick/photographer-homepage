@@ -32,3 +32,17 @@ $(function(){
   mySlider('.right.slider', -500, 500, 5000);
 
 })
+
+
+// 서브페이지 갤러리
+$(function(){
+  $('.img_list > li').click(function(){
+    // 클릭한 이미지의 src값을 읽음
+    var src = $(this).find('img').attr('src');
+    console.log(src);
+
+    // 대표이미지에 클릭한 이미지 표시
+    $('figure > img').attr('src', src);
+  })
+})
+
