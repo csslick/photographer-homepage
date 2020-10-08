@@ -7,7 +7,7 @@
 
 $(function(){
 
-  // el(요소명) | top(시작위치) | duration(재생시간) | interval_time(인터벌 시간)
+  // el(요소명) | top(시작위치) | duration(재생시간) | interval_time(인터벌 시간-5초 권장)
   function mySlider(el, top, duration, interval_time) {
     $(el).css({marginTop: top}); 
 
@@ -25,7 +25,10 @@ $(function(){
   
   }
 
-  mySlider('.left.slider', 0, 500, 2000);
-  mySlider('.right.slider', -500, 500, 2000);
+  // 왼쪽 슬라이더
+  mySlider('.left.slider', 0, 500, 5000);
+
+  // 오른쪽 슬라이더
+  mySlider('.right.slider', -500, 500, 5000);
 
 })

@@ -1,0 +1,14 @@
+/* fashion.css */
+#content {
+  height: auto;
+}
+#content .img_list {
+  overflow: hidden;
+}
+#content .img_list li { 
+  float: left;
+  width: 12.5%;
+}
+#content .img_list img {
+  width: 100%;
+}
